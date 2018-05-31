@@ -1,5 +1,4 @@
-def word_substituter(tweet)
-  substitutions = {
+  SUBSTITUTIONS = {
   "hello" => 'hi',
   "to" => '2',
   "two" => '2',
@@ -11,12 +10,14 @@ def word_substituter(tweet)
   "at" => "@",
   "and" => "&",
   }
+
+def word_substituter(tweet)
   newTweetArray = []
   tweetArray = tweet.split(" ")
   newArray = []
     tweetArray.map do |word|
-      if substitutions.keys.include?(word.downcase)
-        newWord = substitutions[word.downcase]
+      if SUBSTITUTIONS.keys.include?(word.downcase)
+        newWord = SUBSTITUTIONS[word.downcase]
         newArray << newWord
       else
         newArray << word
